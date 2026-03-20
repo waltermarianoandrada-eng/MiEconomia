@@ -1,0 +1,204 @@
+﻿
+> temp-app@0.0.0 lint
+> eslint .
+
+
+C:\Users\Estudiante\Desktop\MiEconomia\src\components\features\Dashboard.jsx
+   9:84  error    'isSameMonth' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+  25:39  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `monthStart`, but the source dependencies were [transactions, currentDate]. Inferred different dependency than source.
+
+  23 |   const monthEnd = endOfMonth(currentDate);
+  24 |   
+> 25 |   const monthlyTransactions = useMemo(() => {
+     |                                       ^^^^^^^
+> 26 |     return transactions.filter(tx => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |       const txDate = parseISO(tx.date);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |       return txDate >= monthStart && txDate <= monthEnd;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |   }, [transactions, currentDate]);
+     | ^^^^ Could not preserve existing manual memoization
+  31 |
+  32 |   const totalIncome = calculateTotalByType(monthlyTransactions, 'income');
+  33 |   const totalExpense = calculateTotalByType(monthlyTransactions, 'expense');  react-hooks/preserve-manual-memoization
+  25:39  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `monthEnd`, but the source dependencies were [transactions, currentDate]. Inferred different dependency than source.
+
+  23 |   const monthEnd = endOfMonth(currentDate);
+  24 |   
+> 25 |   const monthlyTransactions = useMemo(() => {
+     |                                       ^^^^^^^
+> 26 |     return transactions.filter(tx => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |       const txDate = parseISO(tx.date);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |       return txDate >= monthStart && txDate <= monthEnd;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |   }, [transactions, currentDate]);
+     | ^^^^ Could not preserve existing manual memoization
+  31 |
+  32 |   const totalIncome = calculateTotalByType(monthlyTransactions, 'income');
+  33 |   const totalExpense = calculateTotalByType(monthlyTransactions, 'expense');    react-hooks/preserve-manual-memoization
+  25:39  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `monthStart`, but the source dependencies were [transactions, currentDate]. Inferred different dependency than source.
+
+  23 |   const monthEnd = endOfMonth(currentDate);
+  24 |   
+> 25 |   const monthlyTransactions = useMemo(() => {
+     |                                       ^^^^^^^
+> 26 |     return transactions.filter(tx => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |       const txDate = parseISO(tx.date);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |       return txDate >= monthStart && txDate <= monthEnd;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |   }, [transactions, currentDate]);
+     | ^^^^ Could not preserve existing manual memoization
+  31 |
+  32 |   const totalIncome = calculateTotalByType(monthlyTransactions, 'income');
+  33 |   const totalExpense = calculateTotalByType(monthlyTransactions, 'expense');  react-hooks/preserve-manual-memoization
+  25:39  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `monthEnd`, but the source dependencies were [transactions, currentDate]. Inferred different dependency than source.
+
+  23 |   const monthEnd = endOfMonth(currentDate);
+  24 |   
+> 25 |   const monthlyTransactions = useMemo(() => {
+     |                                       ^^^^^^^
+> 26 |     return transactions.filter(tx => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |       const txDate = parseISO(tx.date);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |       return txDate >= monthStart && txDate <= monthEnd;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |   }, [transactions, currentDate]);
+     | ^^^^ Could not preserve existing manual memoization
+  31 |
+  32 |   const totalIncome = calculateTotalByType(monthlyTransactions, 'income');
+  33 |   const totalExpense = calculateTotalByType(monthlyTransactions, 'expense');    react-hooks/preserve-manual-memoization
+  30:6   warning  React Hook useMemo has missing dependencies: 'monthEnd' and 'monthStart'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/exhaustive-deps
+
+C:\Users\Estudiante\Desktop\MiEconomia\src\components\features\Report.jsx
+  41:38  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `yearStart`, but the source dependencies were [transactions, currentYear]. Inferred different dependency than source.
+
+  39 |   const yearEnd = endOfYear(currentYear);
+  40 |
+> 41 |   const annualTransactions = useMemo(() => {
+     |                                      ^^^^^^^
+> 42 |     return transactions.filter(tx => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |       const txDate = parseISO(tx.date);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 44 |       return txDate >= yearStart && txDate <= yearEnd;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 46 |   }, [transactions, currentYear]);
+     | ^^^^ Could not preserve existing manual memoization
+  47 |
+  48 |   const months = eachMonthOfInterval({ start: yearStart, end: yearEnd });
+  49 |  react-hooks/preserve-manual-memoization
+  41:38  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `yearEnd`, but the source dependencies were [transactions, currentYear]. Inferred different dependency than source.
+
+  39 |   const yearEnd = endOfYear(currentYear);
+  40 |
+> 41 |   const annualTransactions = useMemo(() => {
+     |                                      ^^^^^^^
+> 42 |     return transactions.filter(tx => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |       const txDate = parseISO(tx.date);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 44 |       return txDate >= yearStart && txDate <= yearEnd;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 46 |   }, [transactions, currentYear]);
+     | ^^^^ Could not preserve existing manual memoization
+  47 |
+  48 |   const months = eachMonthOfInterval({ start: yearStart, end: yearEnd });
+  49 |    react-hooks/preserve-manual-memoization
+  41:38  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `yearStart`, but the source dependencies were [transactions, currentYear]. Inferred different dependency than source.
+
+  39 |   const yearEnd = endOfYear(currentYear);
+  40 |
+> 41 |   const annualTransactions = useMemo(() => {
+     |                                      ^^^^^^^
+> 42 |     return transactions.filter(tx => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |       const txDate = parseISO(tx.date);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 44 |       return txDate >= yearStart && txDate <= yearEnd;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 46 |   }, [transactions, currentYear]);
+     | ^^^^ Could not preserve existing manual memoization
+  47 |
+  48 |   const months = eachMonthOfInterval({ start: yearStart, end: yearEnd });
+  49 |  react-hooks/preserve-manual-memoization
+  41:38  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `yearEnd`, but the source dependencies were [transactions, currentYear]. Inferred different dependency than source.
+
+  39 |   const yearEnd = endOfYear(currentYear);
+  40 |
+> 41 |   const annualTransactions = useMemo(() => {
+     |                                      ^^^^^^^
+> 42 |     return transactions.filter(tx => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |       const txDate = parseISO(tx.date);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 44 |       return txDate >= yearStart && txDate <= yearEnd;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |     });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 46 |   }, [transactions, currentYear]);
+     | ^^^^ Could not preserve existing manual memoization
+  47 |
+  48 |   const months = eachMonthOfInterval({ start: yearStart, end: yearEnd });
+  49 |    react-hooks/preserve-manual-memoization
+  46:6   warning  React Hook useMemo has missing dependencies: 'yearEnd' and 'yearStart'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+C:\Users\Estudiante\Desktop\MiEconomia\src\components\ui\index.jsx
+   5:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+  50:25  error  'className' is defined but never used                                                                                           no-unused-vars
+
+C:\Users\Estudiante\Desktop\MiEconomia\src\context\FinanceContext.jsx
+   6:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               react-refresh/only-export-components
+  16:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  14 |   useEffect(() => {
+  15 |     const loadedTx = getItem(STORAGE_KEYS.TRANSACTIONS, []);
+> 16 |     setTransactions(loadedTx);
+     |     ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  17 |     
+  18 |     // Default categories if empty
+  19 |     const loadedCat = getItem(STORAGE_KEYS.CATEGORIES, [  react-hooks/set-state-in-effect
+
+Ô£û 15 problems (13 errors, 2 warnings)
+
