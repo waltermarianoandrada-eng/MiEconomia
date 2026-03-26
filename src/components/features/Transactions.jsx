@@ -170,33 +170,33 @@ const Transactions = () => {
               {groupedTx.map((tx) => {
                 const cat = categories.find(c => c.id === tx.categoryId);
                 return (
-                  <div key={tx.id} className="py-4 flex items-center justify-between group hover:bg-slate-50/50 px-2 rounded-lg transition-colors -mx-2">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-2.5 rounded-xl bg-white border border-slate-100 shadow-sm">
+                  <div key={tx.id} className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group hover:bg-slate-50/50 px-2 rounded-lg transition-colors -mx-2">
+                    <div className="flex items-center space-x-4 min-w-0">
+                      <div className="p-2.5 rounded-xl bg-white border border-slate-100 shadow-sm shrink-0">
                         {tx.type === 'income' ? <TrendingUp className="text-emerald-500 w-5 h-5" /> : tx.type === 'expense' ? <TrendingDown className="text-rose-500 w-5 h-5" /> : <PiggyBank className="text-indigo-500 w-5 h-5" />}
                       </div>
-                      <div>
-                        <h3 className="font-medium text-slate-900">{tx.concept}</h3>
-                        <div className="flex items-center space-x-2 text-sm text-slate-500 mt-0.5">
+                      <div className="min-w-0">
+                        <h3 className="font-medium text-slate-900 truncate">{tx.concept}</h3>
+                        <div className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm text-slate-500 mt-0.5">
                           <span>{format(new Date(tx.date + 'T12:00:00'), "d 'de' MMM, yy", { locale: es })}</span>
-                          <span className="text-slate-300">•</span>
+                          <span className="text-slate-300 hidden sm:inline">•</span>
                           <span className="flex items-center font-medium" style={{ color: cat?.color || '#94a3b8' }}>
-                            <span className="w-2 h-2 rounded-full mr-1.5" style={{ backgroundColor: cat?.color || '#94a3b8' }}></span>
-                            {cat?.name || 'Categoría eliminada'}
+                            <span className="w-2 h-2 rounded-full mr-1.5 shrink-0" style={{ backgroundColor: cat?.color || '#94a3b8' }}></span>
+                            <span className="truncate max-w-[120px] sm:max-w-none">{cat?.name || 'Categoría eliminada'}</span>
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto pl-14 sm:pl-0">
                       <span className={cn(
-                        "font-semibold text-right w-24",
+                        "font-semibold text-left sm:text-right sm:w-24",
                         tx.type === 'income' ? 'text-emerald-600' : tx.type === 'expense' ? 'text-slate-900' : 'text-indigo-600'
                       )}>
                         {tx.type === 'expense' ? '-' : '+'}${parseFloat(tx.amount).toLocaleString('es-AR', { minimumFractionDigits: 2 })}
                       </span>
                       <button 
                         onClick={() => deleteTransaction(tx.id)}
-                        className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
+                        className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors sm:opacity-0 sm:group-hover:opacity-100 ml-4"
                         title="Eliminar"
                       >
                         <Trash2 className="w-4 h-4" />

@@ -118,7 +118,7 @@ const Categories = () => {
                       </Badge>
                     </div>
                   </div>
-                  <div className="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex space-x-2 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
                     <button 
                       onClick={() => handleEdit(cat)}
                       className="p-2 text-slate-400 hover:text-indigo-600 transition-colors"

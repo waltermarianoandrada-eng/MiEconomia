@@ -86,13 +86,13 @@ const Report = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-end print:hidden">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 print:hidden">
         <div>
           <h1 className="text-3xl font-bold text-slate-900">Informe Anual</h1>
           <p className="text-slate-500 mt-1">Comparativa mes a mes y salud financiera</p>
         </div>
-        <div className="flex space-x-3 items-center">
-          <div className="flex bg-white rounded-lg border border-slate-200 overflow-hidden text-sm">
+        <div className="flex flex-wrap sm:flex-nowrap gap-3 items-center w-full sm:w-auto">
+          <div className="flex bg-white rounded-lg border border-slate-200 overflow-hidden text-sm flex-1 sm:flex-none justify-center">
             <button 
               onClick={() => setCurrentYear(prev => subYears(prev, 1))}
               className="px-3 py-1.5 hover:bg-slate-50 border-r border-slate-200 font-medium disabled:opacity-50"
